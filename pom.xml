@@ -1,0 +1,140 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>mojo-sandbox</artifactId>
+        <version>4</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>xsltc-maven-plugin</artifactId>
+    <packaging>maven-plugin</packaging>
+    <version>1.1</version>
+    <name>xsltc-maven-plugin</name>
+    <url>http://www.mofokom.eu/site/${groupId}/${artifactId}/</url>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>mofokom-public</id>
+            <name>mofokom-public</name>
+            <url>http://www.mofokom.eu/maven/snapshots-public</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+        <repository>
+            <id>mofokom-public</id>
+            <name>mofokom-public</name>
+            <url>http://www.mofokom.eu/maven/release-public</url>
+            <uniqueVersion>false</uniqueVersion>
+        </repository>
+        <site>
+            <id>mofokom</id>
+            <url>scp://${site.url}/${project.groupId}/${artifactId}</url>
+        </site>
+    </distributionManagement>
+
+    <developers>
+        <developer>
+            <name>Matt Whitlock</name>
+            <email>mwhitlock@redlambda.com</email>
+            <organization>Red Lambda, Inc.</organization>
+            <organizationUrl>http://www.redlambda.com/</organizationUrl>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
+            <name>Warren Crossing</name>
+            <email>warren.crossing@mofokom.com</email>
+            <organization>Mofokom Sp. z.o.o.</organization>
+            <organizationUrl>http://www.mofokom.mobi/</organizationUrl>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Red Lambda, Inc.</name>
+        <url>http://www.redlambda.com/</url>
+    </organization>
+
+    <dependencies>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+            <version>2.7.2</version>
+            <scope>runtime</scope>
+        </dependency>
+               
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.11.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+            <version>2.2.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-model</artifactId>
+            <version>2.2.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>2.2.1</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <complianceLevel>1.5</complianceLevel>
+                        <source>1.5</source>
+                        <target>1.5</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.6-SNAPSHOT</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <scm>
+        <connection>scm:svn:svn://localhost/xsltc</connection>
+        <developerConnection>scm:svn:svn://localhost/xsltc</developerConnection>
+        <tag>HEAD</tag>
+        <url>svn://localhost/xsltc</url>
+    </scm>
+
+    <!--
+    <scm>
+      <connection>scm:svn:https://svn.codehaus.org/mojo/tags/xsltc-maven-plugin-1.1</connection>
+      <developerConnection>scm:svn:https://svn.codehaus.org/mojo/tags/xsltc-maven-plugin-1.1</developerConnection>
+      <url>https://svn.codehaus.org/mojo/tags/xsltc-maven-plugin-1.1</url>
+    </scm>
+    -->
+</project>
